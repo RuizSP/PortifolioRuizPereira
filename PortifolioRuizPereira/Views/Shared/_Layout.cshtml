@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PortifolioRuizPereira.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="10" tabindex="0">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav id="navbar" class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Ruiz Pereira</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -18,7 +18,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1 nav-pills">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="#main">Início</a>
                         </li>
@@ -56,3 +56,9 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<script>
+    var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+        target: '#navbar'
+    })
+</script>
