@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PortifolioRuizPereira.Models.HomeViewModel;
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -41,7 +43,23 @@
     <hr></hr>
     <section id="portifolio" class="mt-5">
         <h5>Projetos em destaque: </h5>
-        <div>
+        <div class="d-grid">
+
+            @if(Model.Projetos.Count == 0){
+
+                <span> Nenhum Projeto foi cadastrado ainda!</span>
+            }
+            else{
+                foreach(var projeto in Model.Projetos)
+                {
+                    <div class="container border border-secondary w-50 p-2 mt-2">
+                        <strong>@projeto!.Name</strong>
+                        <p> @projeto!.Description</p>
+                        <img src="@projeto!.imagePaths[0]!" alt="cover Image" />
+                        <a class="btn btn-info" href="@projeto!.Path">Acessar</a>
+                    </div>   
+                }
+            }
 
         </div>
         <button class="btn btn-secondary">Ver Mais</button>

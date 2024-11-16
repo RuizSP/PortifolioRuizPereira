@@ -1,0 +1,28 @@
+﻿@model PortifolioRuizPereira.Models.LoginViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-sm" style="max-width: 400px; width: 100%;">
+        <h3 class="text-center mb-4">Login</h3>
+        <form asp-action="Index" method="post">
+            <div class="mb-3">
+                <label asp-for="Login" for="email" class="form-label">E-mail</label>
+                <input asp-for ="Login" type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" for="senha" class="form-label">Senha</label>
+                <input asp-for="Password" type="password" class="form-control" id="senha" placeholder="Digite sua senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+            <div class="text-center mt-3">
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+            <span asp-validation-for="LoginError" , class="alert-danger"></span>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
